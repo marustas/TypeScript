@@ -1,0 +1,9 @@
+//tuples
+let x: [number, string?] = [1,'']
+b=[1]
+//enum
+enum G {
+    A,
+    B
+}
+console.log(g.a,g.b)
