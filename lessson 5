@@ -1,0 +1,43 @@
+class Person {
+    name: string = ''
+    age: number = 0
+
+    constructor(name: string, age: number) {
+        this.name = name
+        this.age = age
+    }
+    sayHello(): string {
+        return ('Hi, my name is')
+    }
+}
+class Student extends Person {
+    group: string = ''
+    course: number = 2
+    constructor(name: string, age: number, group: string, course: number) {
+        super(name, age)
+        this.group = group
+        this.course = course
+    }
+}
+class Teacher extends Person {
+    disciplines: string[] = []
+    constructor(name: string, age: number, disciplines: string[], ) {
+        super(name, age)
+        this.disciplines = disciplines
+    }
+}
+const ira: Person = new Person('Ira', 18)
+console.log(ira)
+console.log(ira.sayHello())
+
+const denis: Student = new Student('denis', 15, 'A2', 2)
+console.log(denis)
+console.log(denis.sayHello())
+
+const newdenis: Person = <Person>denis
+console.log(newdenis)
+console.log(newdenis.sayHello())
+
+const Igor: Teacher = new Teacher('Igor', 28, ['Maths', 'Phisics', 'Programming'])
+console.log(Igor)
+console.log(Igor.sayHello())
