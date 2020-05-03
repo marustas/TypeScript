@@ -1,9 +1,9 @@
 //tuples
-let x: [number, string?] = [1,'']
-b=[1]
+let x: [number, string?] = [1, '']
+x = [1]
 //enum
-enum G {
+enum g {
     A,
     B
 }
-console.log(g.a,g.b)
+console.log(g.A, g.B)

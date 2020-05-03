@@ -1,4 +1,12 @@
-class Person {
+interface IPerson extends IPersonProps {
+
+    sayHello(): string
+}
+interface IPersonProps {
+    name: string
+    age: number
+}
+class Person implements IPerson {
     name: string = ''
     age: number = 0
 
@@ -9,6 +17,9 @@ class Person {
     sayHello(): string {
         return ('Hi, my name is')
     }
+}
+class test {
+
 }
 class Student extends Person {
     group: string = ''
