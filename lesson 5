@@ -15,40 +15,56 @@ class Person implements IPerson {
         this.age = age
     }
     sayHello(): string {
-        return ('Hi, my name is')
+        return 'Hi, my name is'
     }
-}
-class test {
 
 }
 class Student extends Person {
     group: string = ''
     course: number = 2
+
     constructor(name: string, age: number, group: string, course: number) {
         super(name, age)
         this.group = group
         this.course = course
     }
+    description(): string {
+        return `
+       Имя: ${this.name}
+       Возраст : ${this.age}
+       Группа : ${this.group}
+       Курс :${this.course}
+                `
+    }
 }
+
 class Teacher extends Person {
     disciplines: string[] = []
-    constructor(name: string, age: number, disciplines: string[], ) {
+    constructor(name: string, age: number, disciplines: string[],) {
         super(name, age)
         this.disciplines = disciplines
     }
+    description(): string {
+        return `
+        Имя: ${this.name}
+        Возраст : ${this.age}
+        Дисциплины:${this.disciplines}
+
+              `
+    }
 }
-const ira: Person = new Person('Ira', 18)
-console.log(ira)
-console.log(ira.sayHello())
+// const ira: Person = new Person('Ira', 18)
+// console.log(ira)
+// console.log(ira.sayHello())
 
 const denis: Student = new Student('denis', 15, 'A2', 2)
 console.log(denis)
-console.log(denis.sayHello())
+console.log(denis.description())
 
-const newdenis: Person = <Person>denis
-console.log(newdenis)
-console.log(newdenis.sayHello())
+// const newdenis: Person = <Person>denis
+// console.log(newdenis)
+// console.log(newdenis.sayHello())
 
 const Igor: Teacher = new Teacher('Igor', 28, ['Maths', 'Phisics', 'Programming'])
 console.log(Igor)
-console.log(Igor.sayHello())
+console.log(Igor.description())
