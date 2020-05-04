@@ -1,19 +1,15 @@
-interface IPerson extends IPersonProps {
 
-    sayHello(): string
-}
-interface IPersonProps {
-    name: string
-    age: number
-}
-class Person implements IPerson {
-    name: string = ''
-    age: number = 0
+abstract class Person {
+    //Доступно только внутри кассов private name: string = ''
+    //Доступно тоько внутри  классов и наследников protected public name: string = ''
+    public name: string = ''
+    public readonly age: number = 0//Доступно тоько для read
 
     constructor(name: string, age: number) {
         this.name = name
         this.age = age
     }
+
     sayHello(): string {
         return 'Hi, my name is'
     }
@@ -28,6 +24,7 @@ class Student extends Person {
         this.group = group
         this.course = course
     }
+
     description(): string {
         return `
        Имя: ${this.name}
@@ -44,6 +41,7 @@ class Teacher extends Person {
         super(name, age)
         this.disciplines = disciplines
     }
+
     description(): string {
         return `
         Имя: ${this.name}
@@ -53,17 +51,11 @@ class Teacher extends Person {
               `
     }
 }
-// const ira: Person = new Person('Ira', 18)
-// console.log(ira)
-// console.log(ira.sayHello())
 
 const denis: Student = new Student('denis', 15, 'A2', 2)
 console.log(denis)
 console.log(denis.description())
 
-// const newdenis: Person = <Person>denis
-// console.log(newdenis)
-// console.log(newdenis.sayHello())
 
 const Igor: Teacher = new Teacher('Igor', 28, ['Maths', 'Phisics', 'Programming'])
 console.log(Igor)
