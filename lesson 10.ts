@@ -12,21 +12,21 @@ class Class1 {
     }
 }
 
-type A = typeof function1
-type B = typeof Class1
+type A1 = typeof function1
+type B1 = typeof Class1
 
 type MyParameters<T extends (...args: any) => any> = T extends (...args: infer P) => any ? P : never
-type C = Parameters<A>
-type D = MyParameters<A>
+type C1 = Parameters<A1>
+type D1 = MyParameters<A1>
 
-type MyConstructorParameters<T extends new (...args: any) => any>=T extends new (...args: infer P) => any ? P : never
-type E = ConstructorParameters<B>
-type F = MyConstructorParameters<B>
+type MyConstructorParameters<T extends new (...args: any) => any> = T extends new (...args: infer P) => any ? P : never
+type E1 = ConstructorParameters<B1>
+type F1 = MyConstructorParameters<B1>
 
 type MyRetyrnType<T extends (...args: any) => any> = T extends (...args: any) => infer P ? P : any
-type G = ReturnType<A>
-type H = MyRetyrnType<A>
+type G = ReturnType<A1>
+type H = MyRetyrnType<A1>
 
 type MyInstanceType<T extends new (...args: any) => any> = T extends new (...args: any) => infer P ? P : any
-type I = InstanceType<B>
-type J = MyInstanceType<B>
+type I = InstanceType<B1>
+type J = MyInstanceType<B1>
