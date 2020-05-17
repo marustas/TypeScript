@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container py-5">
+        <h2>Добавить товар</h2>
+        <form class="mb-5" id="form">
+            <div class="form-group">
+                <label for="name">Название</label>
+                <input class="form-control" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Цена</label>
+                <input type="number" class="form-control" id="price" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Добавить товар</button>
+        </form>
+        <h2>Все товары</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Название</th>
+                    <th>Цена</th>
+                </tr>
+            </thead>
+            <tbody id="table"></tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
