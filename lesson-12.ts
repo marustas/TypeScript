@@ -3,7 +3,7 @@ a2 = undefined
 a2 = 50
 
 let b2: number = a2 ?? 100//Еслт значение null или undefineda то возвращается значение справа если же отличное от них то значение слева
-console.log(b)
+console.log(b2)
 
 // function sum(a: number, b: number, c?: (d: number) => void): number {
 //     const d: number = a + b
@@ -14,7 +14,7 @@ console.log(b)
 // }
 
 function sum(a: ({ cost: number } | null | undefined)[]): number {
-    let x: number = 0
+    let d: number = 0
     for (const b of a) {
         d += b?.cost ?? 0
     }
