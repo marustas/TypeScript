@@ -15,3 +15,4 @@ m = { b: 'Hello', a: 'Hello' }
 type O = { a: string, b?: number };
 let o: O = { a: 'Hello' }
 o = { a: 'Hello', b: 1 }
+c
